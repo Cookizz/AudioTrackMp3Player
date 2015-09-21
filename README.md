@@ -9,7 +9,7 @@ Sample demo of Android network mp3 music player using AudioTrack and jlayer.
 
         Decoder mDecoder = new Decoder();
 
-2. Build an `InputStream' of your mp3 source and feed them into `BitStream`.
+2. Build an `InputStream` of your mp3 source and feed them into `BitStream`.
 
         InputStream in = new URL("http://icecast.omroep.nl:80/radio1-sb-mp3")
                 .openConnection()
