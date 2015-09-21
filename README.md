@@ -9,7 +9,7 @@ Sample demo of Android network mp3 music player using AudioTrack and jlayer.
 
   *jlayer directory in this demo: /app/libs/jl1.0.1.jar*
 
-2. Create a `Decoder` from jlayer library. (jlayer is an mp3 library for java platform)
+2. Create a `Decoder` from [jlayer](http://www.javazoom.net/javalayer/javalayer.html) java library.
 
         Decoder mDecoder = new Decoder();
 
