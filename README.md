@@ -34,7 +34,7 @@ Sample demo of Android network mp3 music player using AudioTrack and [jlayer](ht
                 minBufferSize,
                 AudioTrack.MODE_STREAM);
 
-5. Decode the mp3 stream by Decoder and feed the PCM product to `AudioTrack`.
+5. Decode the mp3 stream by Decoder and feed PCM chunks to `AudioTrack`.
 
         Header header;
         for(; framesReaded-- > 0 && (header = bitstream.readFrame()) != null;) {
