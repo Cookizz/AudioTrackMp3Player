@@ -5,18 +5,22 @@ Sample demo of Android network mp3 music player using AudioTrack and jlayer.
 
 ## Explanation
 
-1. Create a `Decoder` from jlayer library. (jlayer is an mp3 library for java platform)
+1. Include jlayer library into your project.
+
+  *jlayer directory in this demo: /app/libs/jl1.0.1.jar*
+
+2. Create a `Decoder` from jlayer library. (jlayer is an mp3 library for java platform)
 
         Decoder mDecoder = new Decoder();
 
-2. Build an `InputStream` of your mp3 source and feed them into `BitStream`.
+3. Build an `InputStream` of your mp3 source and feed them into `BitStream`.
 
         InputStream in = new URL("http://icecast.omroep.nl:80/radio1-sb-mp3")
                 .openConnection()
                 .getInputStream();
         Bitstream bitstream = new Bitstream(in);
 
-3. Create an `AudioTrack` instance.
+4. Create an `AudioTrack` instance.
 
         final int sampleRate = 44100;
         final int minBufferSize = AudioTrack.getMinBufferSize(sampleRate,
@@ -30,7 +34,7 @@ Sample demo of Android network mp3 music player using AudioTrack and jlayer.
                 minBufferSize,
                 AudioTrack.MODE_STREAM);
 
-4. Decode the mp3 stream by Decoder and feed the PCM product to `AudioTrack`.
+5. Decode the mp3 stream by Decoder and feed the PCM product to `AudioTrack`.
 
         Header header;
         for(; framesReaded-- > 0 && (header = bitstream.readFrame()) != null;) {
