@@ -3,7 +3,7 @@ Sample demo of Android network mp3 music player using AudioTrack and [jlayer](ht
 
 *Extremely simple demo is just for you! `MainActivity` involves all you want.*
 
-## Explanation
+## Steps
 
 1. Include jlayer library into your project.
 
