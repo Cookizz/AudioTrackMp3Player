@@ -1,7 +1,5 @@
 # AudioTrackMp3Player
-Simple demo of Android network mp3 music player using AudioTrack and [jlayer](http://www.javazoom.net/javalayer/javalayer.html).
-
-*Extremely simple demo is just for you! `MainActivity` involves all you want.*
+Extremely simple network mp3 music player for Android using AudioTrack and [jlayer](http://www.javazoom.net/javalayer/javalayer.html).
 
 ## Steps
 
