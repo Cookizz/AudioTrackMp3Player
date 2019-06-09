@@ -1,5 +1,6 @@
-# Instructions
 There's no need to copy the demo code, instead, I recommend you to read the instructions below to get a better grasp.
+
+# Instructions
 
 1. Include [jlayer](http://www.javazoom.net/javalayer/javalayer.html) library into your project.
 
