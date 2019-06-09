@@ -11,10 +11,10 @@ There's no need to copy the demo code, instead, I recommend you to read the inst
 
 3. Create a jlayer `BitStream` instance of a given mp3 source.
 
-        InputStream in = new URL("your network mp3 source")
+        InputStream mp3Source = new URL("your network mp3 source")
                 .openConnection()
                 .getInputStream();
-        Bitstream bitStream = new Bitstream(in);
+        Bitstream bitStream = new Bitstream(mp3Source);
 
 4. Create an `AudioTrack` instance.
 
