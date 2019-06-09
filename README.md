@@ -7,16 +7,16 @@ An instruction of creating a simple network mp3 music player for Android using A
 
   *jlayer directory in this demo: /app/libs/jl1.0.1.jar*
 
-2. Create a jlayer `Decoder`.
+2. Create a jlayer `Decoder` instance.
 
         Decoder mDecoder = new Decoder();
 
-3. Build an `InputStream` of your mp3 url source and feed it to `BitStream`.
+3. Create an InputStream of your mp3 url source and feed it to a `BitStream`.
 
         InputStream in = new URL("http://icecast.omroep.nl:80/radio1-sb-mp3")
                 .openConnection()
                 .getInputStream();
-        Bitstream bitstream = new Bitstream(in);
+        Bitstream bitStream = new Bitstream(in);
 
 4. Create an `AudioTrack` instance.
 
@@ -32,11 +32,11 @@ An instruction of creating a simple network mp3 music player for Android using A
                 minBufferSize,
                 AudioTrack.MODE_STREAM);
 
-5. Decode the coming mp3 stream by Decoder and feed PCM chunks to `AudioTrack`.
+5. Decode the mp3 `BitStream` data by `Decoder` and feed the outcoming PCM chunks to `AudioTrack`.
 
         Header header;
-        while (framesReaded-- > 0 && (header = bitstream.readFrame()) != null) {
-            SampleBuffer sampleBuffer = (SampleBuffer) mDecoder.decodeFrame(header, bitstream);
+        while (framesReaded-- > 0 && (header = bitStream.readFrame()) != null) {
+            SampleBuffer sampleBuffer = (SampleBuffer) mDecoder.decodeFrame(header, bitStream);
             short[] buffer = sampleBuffer.getBuffer();
             mAudioTrack.write(buffer, 0, buffer.length);
             bitstream.closeFrame();
