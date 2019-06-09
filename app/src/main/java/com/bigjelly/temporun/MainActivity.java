@@ -47,10 +47,10 @@ public class MainActivity extends Activity {
                     Bitstream bitstream = new Bitstream(in);
 
                     final int READ_THRESHOLD = 2147483647;
-                    int framesReaded = READ_THRESHOLD;
+                    int framesReaded = 0;
 
                     Header header;
-                    for(; framesReaded-- > 0 && (header = bitstream.readFrame()) != null;) {
+                    for(; framesReaded++ <= READ_THRESHOLD && (header = bitstream.readFrame()) != null;) {
                         SampleBuffer sampleBuffer = (SampleBuffer) mDecoder.decodeFrame(header, bitstream);
                         short[] buffer = sampleBuffer.getBuffer();
                         mAudioTrack.write(buffer, 0, buffer.length);
