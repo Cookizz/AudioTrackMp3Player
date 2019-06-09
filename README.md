@@ -1,7 +1,5 @@
-# AudioTrackMp3Player
+# Instruction
 There's no need to copy the demo code, instead, I recommend you to read the instruction below to get a better grasp.
-
-## Steps
 
 1. Include jlayer library into your project.
 
