@@ -1,5 +1,5 @@
 # AudioTrackMp3Player
-Along with the demo, I recommend you to read the instruction below to get better comprehension.
+There's no need to copy the demo code, instead, I recommend you to read the instruction below to get better comprehension.
 
 ## Steps
 
