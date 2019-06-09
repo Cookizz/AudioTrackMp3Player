@@ -38,7 +38,7 @@ An instruction of creating a simple network mp3 music player for Android using A
         
         Header frame;
         int framesReaded = 0;
-        while (framesReaded++ <= READ_THRESHOLD && (header = bitStream.readFrame()) != null) {
+        while (framesReaded++ <= READ_THRESHOLD && (frame = bitStream.readFrame()) != null) {
             SampleBuffer sampleBuffer = (SampleBuffer) decoder.decodeFrame(frame, bitStream);
             short[] pcmChunk = sampleBuffer.getBuffer();
             audioTrack.write(pcmChunk, 0, pcmChunk.length);
