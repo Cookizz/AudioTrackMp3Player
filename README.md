@@ -1,5 +1,5 @@
-# Instruction
-There's no need to copy the demo code, instead, I recommend you to read the instruction below to get a better grasp.
+# Instructions
+There's no need to copy the demo code, instead, I recommend you to read the instructions below to get a better grasp.
 
 1. Include jlayer library into your project.
 
