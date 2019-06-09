@@ -34,8 +34,11 @@ An instruction of creating a simple network mp3 music player for Android using A
 
 5. Decode the mp3 `BitStream` data by `Decoder` and feed the outcoming PCM chunks to `AudioTrack`.
 
+        final int READ_THRESHOLD = 2147483647;
+        
         Header header;
-        while (framesReaded-- > 0 && (header = bitStream.readFrame()) != null) {
+        int framesReaded = 0;
+        while (framesReaded++ <= READ_THRESHOLD && (header = bitStream.readFrame()) != null) {
             SampleBuffer sampleBuffer = (SampleBuffer) mDecoder.decodeFrame(header, bitStream);
             short[] buffer = sampleBuffer.getBuffer();
             mAudioTrack.write(buffer, 0, buffer.length);
