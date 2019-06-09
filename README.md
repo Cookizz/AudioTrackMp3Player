@@ -13,7 +13,7 @@ There's no need to copy the demo code, instead, I recommend you to read the inst
 
 3. Create a jlayer `BitStream` instance of a given mp3 source.
 
-        InputStream in = new URL("http://icecast.omroep.nl:80/radio1-sb-mp3")
+        InputStream in = new URL("your network mp3 source")
                 .openConnection()
                 .getInputStream();
         Bitstream bitStream = new Bitstream(in);
