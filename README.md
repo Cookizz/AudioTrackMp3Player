@@ -9,7 +9,7 @@ An instruction of creating a simple network mp3 music player for Android using A
 
 2. Create a jlayer `Decoder` instance.
 
-        Decoder mDecoder = new Decoder();
+        Decoder decoder = new Decoder();
 
 3. Create a jlayer `BitStream` instance of a given mp3 source.
 
@@ -25,7 +25,7 @@ An instruction of creating a simple network mp3 music player for Android using A
                 AudioFormat.CHANNEL_OUT_STEREO,
                 AudioFormat.ENCODING_PCM_16BIT);
 
-        AudioTrack mAudioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
+        AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
                 sampleRate,
                 AudioFormat.CHANNEL_OUT_STEREO,
                 AudioFormat.ENCODING_PCM_16BIT,
@@ -36,11 +36,11 @@ An instruction of creating a simple network mp3 music player for Android using A
 
         final int READ_THRESHOLD = 2147483647;
         
-        Header header;
+        Header frame;
         int framesReaded = 0;
         while (framesReaded++ <= READ_THRESHOLD && (header = bitStream.readFrame()) != null) {
-            SampleBuffer sampleBuffer = (SampleBuffer) mDecoder.decodeFrame(header, bitStream);
+            SampleBuffer sampleBuffer = (SampleBuffer) decoder.decodeFrame(frame, bitStream);
             short[] pcmChunk = sampleBuffer.getBuffer();
-            mAudioTrack.write(pcmChunk, 0, pcmChunk.length);
+            audioTrack.write(pcmChunk, 0, pcmChunk.length);
             bitstream.closeFrame();
         }
