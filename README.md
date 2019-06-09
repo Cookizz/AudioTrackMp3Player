@@ -1,5 +1,5 @@
 # AudioTrackMp3Player
-An instruction of creating a simple network mp3 music player for Android using AudioTrack and [jlayer](http://www.javazoom.net/javalayer/javalayer.html).
+Along with the demo, I recommend you to read the instruction below to get better comprehension.
 
 ## Steps
 
